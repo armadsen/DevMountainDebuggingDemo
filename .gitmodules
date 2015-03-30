@@ -1,0 +1,3 @@
+[submodule "Frameworks/AetherCore"]
+	path = Frameworks/AetherCore
+	url = git@bitbucket.org:openreelsoftware/aethercore.git
