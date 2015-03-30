@@ -10,7 +10,7 @@
 
 @interface ORSCallbookImageController ()
 
-@property (nonatomic, strong) NSMutableDictionary *cache;
+@property (nonatomic, strong) NSCache *cache;
 
 @end
 
@@ -30,7 +30,9 @@
 {
 	self = [super init];
 	if (self) {
-		_cache = [NSMutableDictionary dictionary];
+		_cache = [[NSCache alloc] init];
+		_cache.countLimit = 10;
+		_cache.name = @"ImageCache";
 	}
 	return self;
 }
@@ -39,23 +41,25 @@
 
 - (UIImage *)imageForCallsign:(NSString *)callsign
 {
-	NSData *data = self.cache[callsign];
-	if (!data) return nil;
-	return [UIImage imageWithData:data];
+	return [self.cache objectForKey:callsign];
 }
 
 - (void)setImage:(UIImage *)image forCallsign:(NSString *)callsign
 {
 	if (!image) return;
-	CGDataProviderRef provider = CGImageGetDataProvider(image.CGImage);
-	NSData *data = (__bridge NSData *)(CGDataProviderCopyData(provider));
-	self.cache[callsign] = data;
+	[self.cache setObject:image forKey:callsign];
 }
 
 - (void)fetchAndCacheImageAtURL:(NSURL *)url forCallsign:(NSString *)callsign completionBlock:(ORSCallbookImageControllerCompletionBlock)block
 {
-	if (!url) return;
 	if (!block) block = ^(UIImage *i){};
+	UIImage *cachedImage = [self imageForCallsign:callsign];
+	if (cachedImage) {
+		block(cachedImage);
+		return;
+	}
+	
+	if (!url) return;
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	__weak typeof(self) weakSelf = self;
 	[[[NSURLSession sharedSession] downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
@@ -65,8 +69,9 @@
 			block(nil);
 			return;
 		}
-		weakSelf.cache[callsign] = data;
-		block([UIImage imageWithData:data]);
+		UIImage *image = [UIImage imageWithData:data];
+		[weakSelf setImage:image forCallsign:callsign];
+		block(image);
 	}] resume];
 }
 

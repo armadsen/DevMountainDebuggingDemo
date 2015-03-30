@@ -74,6 +74,8 @@
 			
 			[imageController fetchAndCacheImageAtURL:url forCallsign:spot.callsign completionBlock:^(UIImage *image) {
 				dispatch_async(dispatch_get_main_queue(), ^{
+					if (!image) return;
+					
 					NSUInteger index = [self.clusterNode.spots indexOfObject:spot];
 					if (index != NSNotFound) {
 						NSIndexPath *spotPath = [NSIndexPath indexPathForRow:index inSection:0];
