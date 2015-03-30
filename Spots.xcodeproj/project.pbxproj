@@ -14,6 +14,8 @@
 		9D1A9A451AC8DBC800780FA0 /* ORSSpotsAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A9A3D1AC8DBC800780FA0 /* ORSSpotsAppController.m */; };
 		9D1A9A461AC8DBC800780FA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A9A3E1AC8DBC800780FA0 /* main.m */; };
 		9DC661411AC8DC3A00607A88 /* ORSSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */; };
+		9DC662D21AC8DEC300607A88 /* AetherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC662C71AC8DE9E00607A88 /* AetherCore.framework */; };
+		9DC662D41AC8DEDB00607A88 /* AetherCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC662C71AC8DE9E00607A88 /* AetherCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +26,63 @@
 			remoteGlobalIDString = 9D1A9A0A1AC8DBA400780FA0;
 			remoteInfo = Spots;
 		};
+		9DC662C01AC8DE9E00607A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D80C39D1652A57F00C7A824;
+			remoteInfo = AetherCore;
+		};
+		9DC662C21AC8DE9E00607A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D80C3B51652A57F00C7A824;
+			remoteInfo = AetherCoreTests;
+		};
+		9DC662C41AC8DE9E00607A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D24AB27165C68B2007F1B41;
+			remoteInfo = AetherCoreResources;
+		};
+		9DC662C61AC8DE9E00607A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DC661471AC8DCD900607A88;
+			remoteInfo = "AetherCore-iOS";
+		};
+		9DC662C81AC8DE9E00607A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DC661511AC8DCD900607A88;
+			remoteInfo = "AetherCore-iOSTests";
+		};
+		9DC662CB1AC8DEBF00607A88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DC661461AC8DCD900607A88;
+			remoteInfo = "AetherCore-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DC662D31AC8DEC900607A88 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DC662D41AC8DEDB00607A88 /* AetherCore.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9D1A9A0B1AC8DBA400780FA0 /* Spots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spots.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +98,7 @@
 		9D1A9A3E1AC8DBC800780FA0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DC6613F1AC8DC3A00607A88 /* ORSSpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSpotsTableViewController.h; sourceTree = "<group>"; };
 		9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSpotsTableViewController.m; sourceTree = "<group>"; };
+		9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AetherCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC662D21AC8DEC300607A88 /* AetherCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +125,7 @@
 			children = (
 				9D1A9A3B1AC8DBC800780FA0 /* Sources */,
 				9D1A9A341AC8DBC800780FA0 /* Resources */,
+				9DC661A41AC8DE9E00607A88 /* Frameworks */,
 				9D1A9A271AC8DBA400780FA0 /* SpotsTests */,
 				9D1A9A0C1AC8DBA400780FA0 /* Products */,
 			);
@@ -127,6 +188,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9DC661A41AC8DE9E00607A88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DC661A51AC8DE9E00607A88 /* AetherCore */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DC661A51AC8DE9E00607A88 /* AetherCore */ = {
+			isa = PBXGroup;
+			children = (
+				9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */,
+			);
+			path = AetherCore;
+			sourceTree = "<group>";
+		};
+		9DC661AE1AC8DE9E00607A88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DC662C11AC8DE9E00607A88 /* AetherCore.framework */,
+				9DC662C31AC8DE9E00607A88 /* AetherCoreTests.octest */,
+				9DC662C51AC8DE9E00607A88 /* AetherCoreResources.bundle */,
+				9DC662C71AC8DE9E00607A88 /* AetherCore.framework */,
+				9DC662C91AC8DE9E00607A88 /* AetherCore-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,11 +225,13 @@
 			buildPhases = (
 				9D1A9A071AC8DBA400780FA0 /* Sources */,
 				9D1A9A081AC8DBA400780FA0 /* Frameworks */,
+				9DC662D31AC8DEC900607A88 /* Copy Frameworks */,
 				9D1A9A091AC8DBA400780FA0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9DC662CC1AC8DEBF00607A88 /* PBXTargetDependency */,
 			);
 			name = Spots;
 			productName = Spots;
@@ -195,6 +286,12 @@
 			mainGroup = 9D1A9A021AC8DBA400780FA0;
 			productRefGroup = 9D1A9A0C1AC8DBA400780FA0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9DC661AE1AC8DE9E00607A88 /* Products */;
+					ProjectRef = 9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9D1A9A0A1AC8DBA400780FA0 /* Spots */,
@@ -202,6 +299,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9DC662C11AC8DE9E00607A88 /* AetherCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AetherCore.framework;
+			remoteRef = 9DC662C01AC8DE9E00607A88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DC662C31AC8DE9E00607A88 /* AetherCoreTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AetherCoreTests.octest;
+			remoteRef = 9DC662C21AC8DE9E00607A88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DC662C51AC8DE9E00607A88 /* AetherCoreResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AetherCoreResources.bundle;
+			remoteRef = 9DC662C41AC8DE9E00607A88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DC662C71AC8DE9E00607A88 /* AetherCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AetherCore.framework;
+			remoteRef = 9DC662C61AC8DE9E00607A88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DC662C91AC8DE9E00607A88 /* AetherCore-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AetherCore-iOSTests.xctest";
+			remoteRef = 9DC662C81AC8DE9E00607A88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9D1A9A091AC8DBA400780FA0 /* Resources */ = {
@@ -249,6 +384,11 @@
 			isa = PBXTargetDependency;
 			target = 9D1A9A0A1AC8DBA400780FA0 /* Spots */;
 			targetProxy = 9D1A9A251AC8DBA400780FA0 /* PBXContainerItemProxy */;
+		};
+		9DC662CC1AC8DEBF00607A88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AetherCore-iOS";
+			targetProxy = 9DC662CB1AC8DEBF00607A88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
