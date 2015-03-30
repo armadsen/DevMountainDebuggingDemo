@@ -18,12 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[ORSHamQTHCallbookLookupRequest setSubscriberUsername:@"ac7cf"];
-	[ORSHamQTHCallbookLookupRequest setSubscriberPassword:@"csw-89H-Eb9-9XW"];
 	[ORSHamQTHCallbookLookupRequest setEnabled:YES];
-	
-	[ORSQRZXMLCallbookLookupRequest setSubscriberUsername:@"ac7cf"];
-	[ORSQRZXMLCallbookLookupRequest setSubscriberPassword:@"csw-89H-Eb9-9XW"];
 	[ORSQRZXMLCallbookLookupRequest setEnabled:YES];
 	
 	return YES;
