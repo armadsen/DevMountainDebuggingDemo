@@ -16,6 +16,8 @@
 		9DC661411AC8DC3A00607A88 /* ORSSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */; };
 		9DC662D21AC8DEC300607A88 /* AetherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC662C71AC8DE9E00607A88 /* AetherCore.framework */; };
 		9DC662D41AC8DEDB00607A88 /* AetherCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC662C71AC8DE9E00607A88 /* AetherCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DC663211AC8E07E00607A88 /* ORSSpotsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC663201AC8E07E00607A88 /* ORSSpotsController.m */; };
+		9DC663241AC8E93200607A88 /* cty.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9DC663231AC8E93200607A88 /* cty.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,9 @@
 		9DC6613F1AC8DC3A00607A88 /* ORSSpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSpotsTableViewController.h; sourceTree = "<group>"; };
 		9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSpotsTableViewController.m; sourceTree = "<group>"; };
 		9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AetherCore.xcodeproj; sourceTree = "<group>"; };
+		9DC6631F1AC8E07E00607A88 /* ORSSpotsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSpotsController.h; sourceTree = "<group>"; };
+		9DC663201AC8E07E00607A88 /* ORSSpotsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSpotsController.m; sourceTree = "<group>"; };
+		9DC663231AC8E93200607A88 /* cty.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cty.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +165,8 @@
 		9D1A9A341AC8DBC800780FA0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9D1A9A351AC8DBC800780FA0 /* LaunchScreen.xib */,
-				9D1A9A371AC8DBC800780FA0 /* Main.storyboard */,
+				9DC663251AC8E93400607A88 /* Storyboards and XIBs */,
+				9DC663231AC8E93200607A88 /* cty.csv */,
 				9D1A9A391AC8DBC800780FA0 /* Images.xcassets */,
 				9D1A9A3A1AC8DBC800780FA0 /* Info.plist */,
 			);
@@ -175,6 +180,8 @@
 				9D1A9A3D1AC8DBC800780FA0 /* ORSSpotsAppController.m */,
 				9DC6613F1AC8DC3A00607A88 /* ORSSpotsTableViewController.h */,
 				9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */,
+				9DC6631F1AC8E07E00607A88 /* ORSSpotsController.h */,
+				9DC663201AC8E07E00607A88 /* ORSSpotsController.m */,
 				9D1A9A481AC8DBF500780FA0 /* Supporting Files */,
 			);
 			path = Sources;
@@ -214,6 +221,15 @@
 				9DC662C91AC8DE9E00607A88 /* AetherCore-iOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9DC663251AC8E93400607A88 /* Storyboards and XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				9D1A9A351AC8DBC800780FA0 /* LaunchScreen.xib */,
+				9D1A9A371AC8DBC800780FA0 /* Main.storyboard */,
+			);
+			name = "Storyboards and XIBs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1A9A431AC8DBC800780FA0 /* Images.xcassets in Resources */,
+				9DC663241AC8E93200607A88 /* cty.csv in Resources */,
 				9D1A9A411AC8DBC800780FA0 /* LaunchScreen.xib in Resources */,
 				9D1A9A421AC8DBC800780FA0 /* Main.storyboard in Resources */,
 			);
@@ -363,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC663211AC8E07E00607A88 /* ORSSpotsController.m in Sources */,
 				9DC661411AC8DC3A00607A88 /* ORSSpotsTableViewController.m in Sources */,
 				9D1A9A461AC8DBC800780FA0 /* main.m in Sources */,
 				9D1A9A451AC8DBC800780FA0 /* ORSSpotsAppController.m in Sources */,

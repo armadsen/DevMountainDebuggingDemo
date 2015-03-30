@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ORSDXClusterNode;
+
 @interface ORSSpotsTableViewController : UITableViewController
+
+@property (strong, nonatomic) ORSDXClusterNode *clusterNode;
 
 @end
