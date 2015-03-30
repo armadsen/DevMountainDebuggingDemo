@@ -62,14 +62,24 @@
 	ORSDXSpot *spot = self.clusterNode.spots[indexPath.row];
 	cell.textLabel.text = spot.callsign;
 	
-	cell.imageView.image = nil;
-	NSString *imageURLString = spot.callbookInfo.imageURL;
-	if ([imageURLString length]) {
-		NSURL *imageURL = [NSURL URLWithString:imageURLString];
-		NSData *data = [NSData dataWithContentsOfURL:imageURL];
-		UIImage *image = [UIImage imageWithData:data];
-		[[ORSCallbookImageController sharedCache] setImage:image forCallsign:spot.callsign];
-		cell.imageView.image = image;
+	ORSCallbookImageController *imageController = [ORSCallbookImageController sharedCache];
+	UIImage *image = [imageController imageForCallsign:spot.callsign];
+	cell.imageView.image = image;
+	
+	if (!image) {
+		// Try to fetch image
+		NSString *imageURLString = spot.callbookInfo.imageURL;
+		if ([imageURLString length]) {
+			NSURL *url = [NSURL URLWithString:imageURLString];
+			
+			[imageController fetchAndCacheImageAtURL:url forCallsign:spot.callsign completionBlock:^(UIImage *image) {
+				NSUInteger index = [self.clusterNode.spots indexOfObject:spot];
+				if (index != NSNotFound) {
+					NSIndexPath *spotPath = [NSIndexPath indexPathForRow:index inSection:0];
+					[tableView reloadRowsAtIndexPaths:@[spotPath] withRowAnimation:UITableViewRowAnimationNone];
+				}
+			}];
+		}
 	}
 	
 	return cell;
