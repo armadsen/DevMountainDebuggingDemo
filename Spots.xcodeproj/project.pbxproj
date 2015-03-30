@@ -16,8 +16,10 @@
 		9DC661411AC8DC3A00607A88 /* ORSSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */; };
 		9DC662D21AC8DEC300607A88 /* AetherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC662C71AC8DE9E00607A88 /* AetherCore.framework */; };
 		9DC662D41AC8DEDB00607A88 /* AetherCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC662C71AC8DE9E00607A88 /* AetherCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DC663211AC8E07E00607A88 /* ORSSpotsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC663201AC8E07E00607A88 /* ORSSpotsController.m */; };
 		9DC663241AC8E93200607A88 /* cty.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9DC663231AC8E93200607A88 /* cty.csv */; };
+		9DF484A91AC8F0DB00787095 /* ORSSpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF484A81AC8F0DB00787095 /* ORSSpotDetailViewController.m */; };
+		9DF484B11AC8F31100787095 /* ORSCallbookImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF484B01AC8F31100787095 /* ORSCallbookImageController.m */; };
+		9DF484B31AC8F5D100787095 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF484B21AC8F5D100787095 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,9 +103,12 @@
 		9DC6613F1AC8DC3A00607A88 /* ORSSpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSpotsTableViewController.h; sourceTree = "<group>"; };
 		9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSpotsTableViewController.m; sourceTree = "<group>"; };
 		9DC661AD1AC8DE9E00607A88 /* AetherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AetherCore.xcodeproj; sourceTree = "<group>"; };
-		9DC6631F1AC8E07E00607A88 /* ORSSpotsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSpotsController.h; sourceTree = "<group>"; };
-		9DC663201AC8E07E00607A88 /* ORSSpotsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSpotsController.m; sourceTree = "<group>"; };
 		9DC663231AC8E93200607A88 /* cty.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cty.csv; sourceTree = "<group>"; };
+		9DF484A71AC8F0DB00787095 /* ORSSpotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSpotDetailViewController.h; sourceTree = "<group>"; };
+		9DF484A81AC8F0DB00787095 /* ORSSpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSpotDetailViewController.m; sourceTree = "<group>"; };
+		9DF484AF1AC8F31100787095 /* ORSCallbookImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSCallbookImageController.h; sourceTree = "<group>"; };
+		9DF484B01AC8F31100787095 /* ORSCallbookImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSCallbookImageController.m; sourceTree = "<group>"; };
+		9DF484B21AC8F5D100787095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF484B31AC8F5D100787095 /* MapKit.framework in Frameworks */,
 				9DC662D21AC8DEC300607A88 /* AetherCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,10 +184,9 @@
 			children = (
 				9D1A9A3C1AC8DBC800780FA0 /* ORSSpotsAppController.h */,
 				9D1A9A3D1AC8DBC800780FA0 /* ORSSpotsAppController.m */,
-				9DC6613F1AC8DC3A00607A88 /* ORSSpotsTableViewController.h */,
-				9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */,
-				9DC6631F1AC8E07E00607A88 /* ORSSpotsController.h */,
-				9DC663201AC8E07E00607A88 /* ORSSpotsController.m */,
+				9DF484AF1AC8F31100787095 /* ORSCallbookImageController.h */,
+				9DF484B01AC8F31100787095 /* ORSCallbookImageController.m */,
+				9DF484AE1AC8F0E100787095 /* View Controllers */,
 				9D1A9A481AC8DBF500780FA0 /* Supporting Files */,
 			);
 			path = Sources;
@@ -198,6 +203,7 @@
 		9DC661A41AC8DE9E00607A88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DF484B21AC8F5D100787095 /* MapKit.framework */,
 				9DC661A51AC8DE9E00607A88 /* AetherCore */,
 			);
 			path = Frameworks;
@@ -230,6 +236,17 @@
 				9D1A9A371AC8DBC800780FA0 /* Main.storyboard */,
 			);
 			name = "Storyboards and XIBs";
+			sourceTree = "<group>";
+		};
+		9DF484AE1AC8F0E100787095 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DC6613F1AC8DC3A00607A88 /* ORSSpotsTableViewController.h */,
+				9DC661401AC8DC3A00607A88 /* ORSSpotsTableViewController.m */,
+				9DF484A71AC8F0DB00787095 /* ORSSpotDetailViewController.h */,
+				9DF484A81AC8F0DB00787095 /* ORSSpotDetailViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,9 +397,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DC663211AC8E07E00607A88 /* ORSSpotsController.m in Sources */,
 				9DC661411AC8DC3A00607A88 /* ORSSpotsTableViewController.m in Sources */,
 				9D1A9A461AC8DBC800780FA0 /* main.m in Sources */,
+				9DF484A91AC8F0DB00787095 /* ORSSpotDetailViewController.m in Sources */,
+				9DF484B11AC8F31100787095 /* ORSCallbookImageController.m in Sources */,
 				9D1A9A451AC8DBC800780FA0 /* ORSSpotsAppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

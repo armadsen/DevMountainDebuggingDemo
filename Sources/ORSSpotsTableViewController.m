@@ -8,6 +8,8 @@
 
 #import "ORSSpotsTableViewController.h"
 @import AetherCore;
+#import "ORSCallbookImageController.h"
+#import "ORSSpotDetailViewController.h"
 
 @interface ORSSpotsTableViewController () <ORSDXClusterDelegate>
 
@@ -17,8 +19,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
+	[super viewDidLoad];
+	
 	self.clusterNode = [ORSDXClusterNode dxClusterWithURL:[NSURL URLWithString:@"dxc.nc7j.com"]];
 	self.clusterNode.delegate = self;
 	[self.clusterNode connect];
@@ -45,22 +47,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.clusterNode.spots count];
+	return [self.clusterNode.spots count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpotTableCell" forIndexPath:indexPath];
-    
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpotTableCell" forIndexPath:indexPath];
+	
 	ORSDXSpot *spot = self.clusterNode.spots[indexPath.row];
 	cell.textLabel.text = spot.callsign;
 	
-    return cell;
+	cell.imageView.image = nil;
+	NSString *imageURLString = spot.callbookInfo.imageURL;
+	if ([imageURLString length]) {
+		NSURL *imageURL = [NSURL URLWithString:imageURLString];
+		NSData *data = [NSData dataWithContentsOfURL:imageURL];
+		UIImage *image = [UIImage imageWithData:data];
+		[[ORSCallbookImageController sharedCache] setImage:image forCallsign:spot.callsign];
+		cell.imageView.image = image;
+	}
+	
+	return cell;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"SpotDetailSegue"]) {
+		UITableViewCell *cell = (UITableViewCell *)sender;
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+		ORSDXSpot *spot = self.clusterNode.spots[indexPath.row];
+		[(ORSSpotDetailViewController *)segue.destinationViewController setSpot:spot];
+	}
 }
 
 @end
