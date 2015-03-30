@@ -73,11 +73,13 @@
 			NSURL *url = [NSURL URLWithString:imageURLString];
 			
 			[imageController fetchAndCacheImageAtURL:url forCallsign:spot.callsign completionBlock:^(UIImage *image) {
-				NSUInteger index = [self.clusterNode.spots indexOfObject:spot];
-				if (index != NSNotFound) {
-					NSIndexPath *spotPath = [NSIndexPath indexPathForRow:index inSection:0];
-					[tableView reloadRowsAtIndexPaths:@[spotPath] withRowAnimation:UITableViewRowAnimationNone];
-				}
+				dispatch_async(dispatch_get_main_queue(), ^{
+					NSUInteger index = [self.clusterNode.spots indexOfObject:spot];
+					if (index != NSNotFound) {
+						NSIndexPath *spotPath = [NSIndexPath indexPathForRow:index inSection:0];
+						[tableView reloadRowsAtIndexPaths:@[spotPath] withRowAnimation:UITableViewRowAnimationNone];
+					}
+				});
 			}];
 		}
 	}
