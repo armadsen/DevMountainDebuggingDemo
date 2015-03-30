@@ -39,13 +39,17 @@
 
 - (UIImage *)imageForCallsign:(NSString *)callsign
 {
-	return self.cache[callsign];
+	NSData *data = self.cache[callsign];
+	if (!data) return nil;
+	return [UIImage imageWithData:data];
 }
 
 - (void)setImage:(UIImage *)image forCallsign:(NSString *)callsign
 {
 	if (!image) return;
-	self.cache[callsign] = image;
+	CGDataProviderRef provider = CGImageGetDataProvider(image.CGImage);
+	CFDataRef cfData = CGDataProviderCopyData(provider);
+	self.cache[callsign] = (__bridge NSData *)cfData;
 }
 
 - (void)fetchAndCacheImageAtURL:(NSURL *)url forCallsign:(NSString *)callsign completionBlock:(ORSCallbookImageControllerCompletionBlock)block
@@ -54,7 +58,8 @@
 	if (!block) block = ^(UIImage *i){};
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	__weak typeof(self) weakSelf = self;
-	[[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+	[[[NSURLSession sharedSession] downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+		NSData *data = [NSData dataWithContentsOfURL:location];
 		if (!data) {
 			NSLog(@"Unable to get image from %@: %@", url, error);
 			block(nil);
